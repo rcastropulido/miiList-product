@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    
+	    <title>MiiList</title>
+	    
+	    <link rel="stylesheet" href="/css/miiList.css">
+	    
+        <script type="text/javascript" src="/js/miiList.js"></script>
+        <script type="text/javascript" src="/js/events.js"></script>
+        <script type="text/javascript" src="/js/errors.js"></script>    	    
+    </head>
+    <body>
+        <div id="app">
+            <h1>Mii Product List</h1>
+        
+		    <div class="filter">
+		        <input id="filterInput" type="text" placeholder="Filter by name or category">
+		        <button id="addProductButton">➕</button>
+		    </div>            
+            <table class="productList">
+                <thead>
+                    <tr>
+                        <th class="id">ID</th>
+                        <th class="name">Name</th>
+                        <th class="price">Price</th>
+                        <th class="category">Category</th>
+                        <th class="action"></th>
+                    </tr>    
+                </thead>
+                <tbody id="miiList">
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

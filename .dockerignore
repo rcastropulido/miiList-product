@@ -1,0 +1,13 @@
+target/
+.mvn/
+.git/
+.settings/
+
+*.md
+
+.gitignore
+.classpath
+.project
+
+mvnw
+mvnw.cmd

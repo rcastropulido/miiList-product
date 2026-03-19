@@ -1,0 +1,19 @@
+server:
+    port: ${SERVER_PORT:8081}
+
+# OpenAPI
+springdoc:
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        enabled: true
+        path: /swagger-ui.html
+
+# Logging
+logging:
+    level:
+        org.springframework: ERROR
+        org.springframework.web: DEBUG
+        org.springdoc: DEBUG
+        io.swagger.v3.oas: DEBUG

@@ -1,0 +1,207 @@
+/* === BASE STYLE (Mobile) === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#app {
+    padding: 10px;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filter input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.filter button {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+.filter button:hover {
+    background-color: #45a049;
+}
+
+table.productList {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
+
+table.productList thead {
+    display: none;
+}
+
+table.productList tbody, 
+table.productList tr, 
+table.productList td {
+    display: block;
+}
+
+table.productList tr {
+    margin-bottom: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative;
+}
+
+table.productList td:not(:last-child) {
+    width: calc(100% - 60px);
+}
+table.productList td:last-child {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: auto;
+    display: flex;
+}
+table.productList td:last-child::before {
+    display: none;
+}
+
+table.productList td::before {
+    content: attr(data-label); 
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+
+table.productList td button {
+    background-color: #ffaaaa;
+}
+
+
+/* === TABLET (≥ 768px) === */
+@media (min-width: 768px) {
+    #app {
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+    button {
+        padding: 5px 10px;
+    }
+    
+    table.productList {
+        table-layout: fixed;
+    }
+    
+    table.productList thead {
+        display: table-header-group;
+    }
+
+    table.productList tbody, 
+    table.productList tr, 
+    table.productList td {
+        display: table-row-group;
+    }
+
+    table.productList tr {
+        display: table-row;
+        margin-bottom: 0;
+    }
+    
+    table.productList td, 
+    table.productList th {
+        display: table-cell;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    table.productList td:not(:last-child) {
+        width: auto;
+    }
+    table.productList td:last-child {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    table.productList td::before {
+        display: none;
+    }
+    
+    table.productList th.id {
+        width: 80px;
+    }
+    table.productList td.id {
+        text-align: right;
+    }
+    table.productList th.name {
+        width: 70%;
+        white-space: normal;
+    }
+    table.productList th.price {
+        width: 100px;
+    }
+    table.productList td.price {
+        text-align: right;
+    }
+    table.productList th.category {
+        width: 30%;
+        white-space: normal;
+    }
+}
+
+/* === DESKTOP (≥ 1024px) === */
+@media (min-width: 1024px) {
+    #app {
+        max-width: 1200px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    
+    .filter {
+        gap: 15px;
+    }
+    .filter button {
+        margin-right: 15px;
+    }
+
+    table.productList {
+        font-size: 1.1rem;
+    }
+
+    table.productList td, 
+    table.productList th {
+        padding: 15px;
+    }
+}

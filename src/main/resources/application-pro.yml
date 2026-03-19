@@ -1,0 +1,15 @@
+# Application
+server:
+    port: ${SERVER_PORT}
+
+# OpenAPI
+springdoc:
+    api-docs:
+        enabled: false
+    swagger-ui:
+        enabled: false    
+    
+# Logging
+logging:
+    level:
+        org.springframework: WARN
