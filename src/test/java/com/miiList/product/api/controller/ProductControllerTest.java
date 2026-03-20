@@ -1,5 +1,6 @@
 package com.miiList.product.api.controller;
 
+import com.miiList.common.domain.exception.NotFoundException;
 import com.miiList.product.api.dto.ProductMapper;
 import com.miiList.product.domain.model.Product;
 import com.miiList.product.domain.port.in.IProductService;
@@ -127,9 +128,9 @@ class ProductControllerTest {
 
     @Test
     void deleteProduct_WhenServiceThrows_ExceptionPropagates() {
-        doThrow(new RuntimeException("Product not found")).when(productService).deleteProduct(99L);
+        doThrow(new NotFoundException("Product not found")).when(productService).deleteProduct(99L);
 
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> productController.deleteProduct(99L));
+        NotFoundException exception = assertThrows(NotFoundException.class, () -> productController.deleteProduct(99L));
 
         assertEquals("Product not found", exception.getMessage());
     }

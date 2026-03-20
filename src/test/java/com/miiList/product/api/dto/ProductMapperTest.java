@@ -6,18 +6,23 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.miiList.product.domain.model.Product;
 
 
+@ExtendWith(MockitoExtension.class)
 class ProductMapperTest {
 
     private ProductMapper mapper;
 
+	
     @BeforeEach
     void setUp() {
-        mapper = new ProductMapper();
+    	mapper = new ProductMapper();
     }
+    
 
     @Test
     void toDomain_WithValidRequest_ReturnsProduct() {

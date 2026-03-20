@@ -22,15 +22,19 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ProductServiceTest {
 
-	@Mock private IProductRepository productRepository;
-	@InjectMocks private ProductService productService;
+	@Mock 
+	private IProductRepository productRepository;
+	@InjectMocks 
+	private ProductService productService;
 	
 	private Product testProduct;
+	
 	
 	@BeforeEach
 	void setUp() {
 	    testProduct = new Product(1L, "Test Product", 99.99, "Electronics");
 	}
+	
 	
 	@Test
 	void testAddProduct_Success() {
@@ -48,9 +52,7 @@ class ProductServiceTest {
 	void testAddProduct_AlreadyExists() {
 	    when(productRepository.findByName(testProduct.name())).thenReturn(Optional.of(testProduct));
 
-	    assertThrows(AlreadyExistsException.class, () -> {
-	        productService.addProduct(testProduct);
-	    });
+	    assertThrows(AlreadyExistsException.class, () -> productService.addProduct(testProduct));
 
 	    verify(productRepository, times(1)).findByName(testProduct.name());
 	    verify(productRepository, never()).save(any());

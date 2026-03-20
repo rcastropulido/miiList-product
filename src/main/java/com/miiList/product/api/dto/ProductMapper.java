@@ -1,7 +1,6 @@
 package com.miiList.product.api.dto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 import com.miiList.product.domain.model.Product;
@@ -20,6 +19,6 @@ public class ProductMapper {
     public List<ProductResponse> toResponseList(List<Product> products) {
     	return products.stream()
 			.map(this::toResponse)
-			.collect(Collectors.toList());
+			.toList();
     }
 }
